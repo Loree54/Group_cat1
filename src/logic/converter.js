@@ -9,7 +9,7 @@ export function parseInput(value, base) {
 
   for (let i = 0; i < fracPart.length; i++) {
     const digit = parseInt(fracPart[i], base);
-    if (isNaN(digit)) throw new Error("Invalid digit");
+    if (isNaN(digit)) throw new Error("Invalid digit for this base");
     decimal += digit / Math.pow(base, i + 1);
   }
   return decimal;
@@ -28,7 +28,7 @@ export function convertToBase(num, base, precision = 10) {
 
   while (fracPart > 0 && count < precision) {
     fracPart *= base;
-    let digit = Math.floor(fracPart + 1e-12); // tiny epsilon to avoid floating point errors
+    const digit = Math.floor(fracPart + 1e-12); // tiny epsilon
     fracStr += digit.toString(base).toUpperCase();
     fracPart -= digit;
     count++;
@@ -44,14 +44,14 @@ export function batchConvert(values, fromBase, toBase, precision = 10) {
   for (let i = 0; i < values.length; i += 5) {
     const group = values.slice(i, i + 5).map(v => {
       try {
-        const num = parseInput(v, fromBase);
-        const converted = convertToBase(num, toBase, precision);
+        const decimal = parseInput(v, fromBase);
+        const converted = convertToBase(decimal, toBase, precision);
         return { input: v, output: converted, error: null };
       } catch (e) {
-        return { input: v, output: null, error: "Invalid number" };
+        return { input: v, output: null, error: e.message };
       }
     });
-    results.push(group);
+    results.push(...group); // flatten all results
   }
   return results;
-}
+                                            }
