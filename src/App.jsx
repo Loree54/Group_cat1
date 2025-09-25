@@ -12,89 +12,66 @@ function App() {
     setResult(batchConvert(values, parseInt(fromBase), parseInt(toBase)));
   };
 
-  const baseOptions = Array.from({ length: 36 }, (_, i) => i + 2); // Base 2 to 36
+  const baseOptions = [
+    { name: "Binary", value: 2 },
+    { name: "Octal", value: 8 },
+    { name: "Decimal", value: 10 },
+    { name: "Hexadecimal", value: 16 }
+  ];
 
   return (
-    <div style={{ maxWidth: "600px", margin: "2rem auto", fontFamily: "sans-serif", padding: "1rem" }}>
-      <h2 style={{ textAlign: "center", color: "#333" }}>✨ Number System Converter ✨</h2>
+    <div style={{ maxWidth: "500px", margin: "2rem auto", fontFamily: "sans-serif" }}>
+      <h2 style={{ textAlign: "center" }}>Number System Converter</h2>
 
       <input
         type="text"
         placeholder="Enter numbers separated by space or comma"
         value={input}
         onChange={e => setInput(e.target.value)}
-        style={{
-          width: "100%",
-          padding: "0.8rem",
-          fontSize: "1rem",
-          borderRadius: "8px",
-          border: "1px solid #ccc",
-          marginBottom: "1rem"
-        }}
+        style={{ width: "100%", padding: "0.7rem", marginBottom: "1rem", borderRadius: "6px", border: "1px solid #ccc" }}
       />
 
       <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "1rem" }}>
         <div>
-          <label>From Base:</label>
+          <label>From:</label>
           <select
             value={fromBase}
             onChange={e => setFromBase(e.target.value)}
-            style={{ marginLeft: "0.5rem", padding: "0.5rem", borderRadius: "6px" }}
+            style={{ marginLeft: "0.5rem", padding: "0.5rem", borderRadius: "5px" }}
           >
-            {baseOptions.map(b => <option key={b} value={b}>{b}</option>)}
+            {baseOptions.map(b => <option key={b.value} value={b.value}>{b.name}</option>)}
           </select>
         </div>
 
         <div>
-          <label>To Base:</label>
+          <label>To:</label>
           <select
             value={toBase}
             onChange={e => setToBase(e.target.value)}
-            style={{ marginLeft: "0.5rem", padding: "0.5rem", borderRadius: "6px" }}
+            style={{ marginLeft: "0.5rem", padding: "0.5rem", borderRadius: "5px" }}
           >
-            {baseOptions.map(b => <option key={b} value={b}>{b}</option>)}
+            {baseOptions.map(b => <option key={b.value} value={b.value}>{b.name}</option>)}
           </select>
         </div>
       </div>
 
       <button
         onClick={handleConvert}
-        style={{
-          width: "100%",
-          padding: "1rem",
-          backgroundColor: "#4CAF50",
-          color: "white",
-          fontSize: "1.1rem",
-          border: "none",
-          borderRadius: "8px",
-          cursor: "pointer",
-          marginBottom: "2rem"
-        }}
+        style={{ width: "100%", padding: "0.8rem", backgroundColor: "#4CAF50", color: "white", border: "none", borderRadius: "6px", cursor: "pointer" }}
       >
-        Convert 🔄
+        Convert
       </button>
 
       {result.length > 0 && (
-        <div>
+        <div style={{ marginTop: "1.5rem" }}>
           {result.map((group, i) => (
-            <div
-              key={i}
-              style={{
-                marginBottom: "1rem",
-                padding: "1rem",
-                borderRadius: "8px",
-                backgroundColor: "#f0f0f0"
-              }}
-            >
+            <div key={i} style={{ marginBottom: "1rem", padding: "0.8rem", borderRadius: "6px", backgroundColor: "#f9f9f9" }}>
               <strong>Group {i + 1}</strong>
-              <ul style={{ listStyle: "none", paddingLeft: "0.5rem", marginTop: "0.5rem" }}>
+              <ul style={{ paddingLeft: "1rem", marginTop: "0.5rem" }}>
                 {group.map((item, j) => (
-                  <li key={j} style={{ marginBottom: "0.5rem", fontSize: "1.05rem" }}>
-                    {item.error ? (
-                      <span style={{ color: "red" }}>{item.input} → {item.error}</span>
-                    ) : (
-                      <span>{item.input} → {item.output}</span>
-                    )}
+                  <li key={j}>
+                    {item.error ? <span style={{ color: "red" }}>{item.input} → {item.error}</span>
+                                : <span>{item.input} → {item.output}</span>}
                   </li>
                 ))}
               </ul>
