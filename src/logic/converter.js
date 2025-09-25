@@ -1,26 +1,53 @@
-// Conversion logic for different number systems
+// src/logic/converter.js
 
-export function convertNumber(value, fromBase, toBase) {
-  if (value.trim() === '') return ''
+// Convert a number string with fractional part from any base to decimal
+export function parseInput(value, base) {
+  if (!value.includes(".")) return parseInt(value, base);
 
-  // Map number system names to radix values
-  const bases = {
-    decimal: 10,
-    binary: 2,
-    octal: 8,
-    hexadecimal: 16,
+  const [intPart, fracPart] = value.split(".");
+  let decimal = parseInt(intPart, base);
+
+  for (let i = 0; i < fracPart.length; i++) {
+    decimal += parseInt(fracPart[i], base) / Math.pow(base, i + 1);
+  }
+  return decimal;
+}
+
+// Convert decimal number to any base including fractions
+export function convertToBase(num, base, precision = 5) {
+  const intPart = Math.floor(num);
+  let fracPart = num - intPart;
+
+  let intStr = intPart.toString(base).toUpperCase();
+  if (fracPart === 0) return intStr;
+
+  let fracStr = "";
+  let count = 0;
+  while (fracPart > 0 && count < precision) {
+    fracPart *= base;
+    const digit = Math.floor(fracPart);
+    fracStr += digit.toString(base).toUpperCase();
+    fracPart -= digit;
+    count++;
   }
 
-  const from = bases[fromBase]
-  const to = bases[toBase]
+  return intStr + "." + fracStr;
+}
 
-  // Convert input value to decimal first
-  let decimalValue = parseInt(value, from)
-
-  if (isNaN(decimalValue)) {
-    throw new Error('Invalid number input')
+// Batch process in groups of 5
+export function batchConvert(values, fromBase, toBase) {
+  const results = [];
+  for (let i = 0; i < values.length; i += 5) {
+    const group = values.slice(i, i + 5).map(v => {
+      try {
+        const num = parseInput(v, fromBase);
+        const converted = convertToBase(num, toBase);
+        return { input: v, output: converted, error: null };
+      } catch (e) {
+        return { input: v, output: null, error: "Invalid number" };
+      }
+    });
+    results.push(group);
   }
-
-  // Convert decimal to target base
-  return decimalValue.toString(to).toUpperCase()
+  return results;
 }
