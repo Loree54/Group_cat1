@@ -16,7 +16,7 @@ export function parseInput(value, base) {
 }
 
 // Convert decimal number to any base including fractions
-export function convertToBase(num, base, precision = 5) {
+export function convertToBase(num, base, precision = 10) {
   const intPart = Math.floor(num);
   let fracPart = num - intPart;
 
@@ -25,25 +25,27 @@ export function convertToBase(num, base, precision = 5) {
 
   let fracStr = "";
   let count = 0;
+
   while (fracPart > 0 && count < precision) {
     fracPart *= base;
-    const digit = Math.floor(fracPart + 1e-12); // tiny epsilon to avoid floating point errors
+    let digit = Math.floor(fracPart + 1e-12); // tiny epsilon to avoid floating point errors
     fracStr += digit.toString(base).toUpperCase();
     fracPart -= digit;
     count++;
+    if (Math.abs(fracPart) < 1e-12) break; // stop if remainder effectively zero
   }
 
   return intStr + "." + fracStr;
 }
 
 // Batch process in groups of 5
-export function batchConvert(values, fromBase, toBase) {
+export function batchConvert(values, fromBase, toBase, precision = 10) {
   const results = [];
   for (let i = 0; i < values.length; i += 5) {
     const group = values.slice(i, i + 5).map(v => {
       try {
         const num = parseInput(v, fromBase);
-        const converted = convertToBase(num, toBase, 5);
+        const converted = convertToBase(num, toBase, precision);
         return { input: v, output: converted, error: null };
       } catch (e) {
         return { input: v, output: null, error: "Invalid number" };
