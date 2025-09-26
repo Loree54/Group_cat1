@@ -1,104 +1,58 @@
 # Number System Converter - Program Documentaton 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>PROGRAM.md - Number System Converter</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      margin: 20px;
-      background-color: #f9f9f9;
-      color: #333;
-    }
-    h1, h2, h3 {
-      color: #2c3e50;
-    }
-    pre {
-      background: #272822;
-      color: #f8f8f2;
-      padding: 12px;
-      border-radius: 8px;
-      overflow-x: auto;
-    }
-    code {
-      background: #eee;
-      padding: 2px 6px;
-      border-radius: 4px;
-      font-family: Consolas, monospace;
-    }
-    ul {
-      margin-left: 20px;
-    }
-    .team {
-      background: #ecf0f1;
-      padding: 10px;
-      border-left: 5px solid #3498db;
-      border-radius: 5px;
-    }
-    .highlight {
-      color: #16a085;
-      font-weight: bold;
-    }
-  </style>
-</head>
-<body>
+<h1 align="center">📘 PROGRAM DOCUMENTATION</h1>
 
-  <h1>Number System Converter – Program Documentation</h1>
-  <p><strong>Group W</strong> – A collaborative project where all members contributed equally, ensuring fair participation and teamwork.</p>
+<h2>1. Overview</h2>
+<p>
+A web-based application that automates conversions between number systems: 
+<strong>Decimal</strong>, <strong>Binary</strong>, <strong>Octal</strong>, and <strong>Hexadecimal</strong>. 
+This project was developed by <b>GROUP W</b> as part of an assignment submission. 
+The app features a clean, interactive UI, accurate conversion logic, and supports batch-of-five processing.
+</p>
 
-  <h2>1. Overview</h2>
-  <p>
-    A web-based application that automates conversions between number systems:
-    decimal, binary, octal, and hexadecimal. Developed as a <span class="highlight">GROUP W</span> assignment submission.
-    The system provides a clean user interface, accurate logic, and potential for batch-of-five processing.
-  </p>
+<hr/>
 
-  <h2>2. Project Architecture</h2>
-  <ul>
-    <li><strong>Frontend:</strong> React + Vite
-      <ul>
-        <li><code>App.jsx</code> – Main UI component</li>
-        <li><code>main.jsx</code> – React entry point</li>
-        <li><code>index.css</code> – Styling</li>
-      </ul>
-    </li>
-    <li><strong>Logic:</strong> Node.js / JavaScript
-      <ul>
-        <li><code>src/logic/converter.js</code> – Conversion functions, error handling</li>
-      </ul>
-    </li>
-    <li><strong>Deployment:</strong> Static site hosted on <strong>Vercel</strong> or <strong>Netlify</strong></li>
-  </ul>
+<h2>2. Project Architecture</h2>
+<ul>
+  <li><b>Frontend:</b> React + Vite  
+    <ul>
+      <li><code>App.jsx</code> → Main UI component</li>
+      <li><code>main.jsx</code> → React entry point</li>
+      <li><code>index.css</code> → Styling</li>
+    </ul>
+  </li>
+  <li><b>Logic:</b> Node.js / JavaScript  
+    <ul>
+      <li><code>src/logic/converter.js</code> → Conversion functions, error handling</li>
+    </ul>
+  </li>
+  <li><b>Deployment:</b> Static site hosted on <b>Vercel</b> or <b>Netlify</b></li>
+</ul>
 
-  <h2>3. Conversion Algorithm</h2>
-  <ol>
-    <li><strong>Input Validation</strong> – Ensure input is not empty and characters are valid for the selected base.</li>
-    <li><strong>Parse Input</strong> – Convert input string to decimal using <code>parseInt(value, fromBase)</code>.</li>
-    <li><strong>Convert to Target Base</strong> – Transform decimal into target base using <code>toString(toBase)</code>, ensuring uppercase output.</li>
-    <li><strong>Error Handling</strong> – Display clear error messages for invalid input.</li>
-  </ol>
+<hr/>
 
-  <h2>4. Features</h2>
-  <ul>
-    <li>Instant conversion between decimal, binary, octal, and hexadecimal.</li>
-    <li>Clear and responsive UI with real-time updates.</li>
-    <li>Batch-of-five conversion mode (planned).</li>
-    <li>Copy-to-clipboard functionality for results.</li>
-    <li>Error highlighting for invalid inputs.</li>
-    <li>Light/Dark theme toggle for accessibility.</li>
-  </ul>
+<h2>3. Conversion Algorithm</h2>
+<ol>
+  <li><b>Input Validation</b> – Ensure input is not empty and contains valid characters for the selected base.</li>
+  <li><b>Parse Input</b> – Convert input string to decimal using custom parsing logic.</li>
+  <li><b>Convert to Target Base</b> – Convert decimal to desired base using <code>toString(toBase)</code>.</li>
+  <li><b>Error Handling</b> – Return clear messages if input is invalid.</li>
+</ol>
 
-  <h2>5. Batch-of-Five Processing (Future Extension)</h2>
-  <ul>
-    <li>Accepts a list of numbers.</li>
-    <li>Splits into groups of five.</li>
-    <li>Processes each group independently and displays results.</li>
-  </ul>
+<hr/>
 
-  <h2>6. File Structure</h2>
-  <pre>
+<h2>4. Features</h2>
+<ul>
+  <li>✅ Convert between Decimal, Binary, Octal, and Hexadecimal.</li>
+  <li>✅ Handles fractional numbers (e.g., <code>101.101₂ → 5.625₁₀</code>).</li>
+  <li>✅ Batch-of-five conversion (optional).</li>
+  <li>✅ Clean and responsive UI.</li>
+  <li>✅ Cross-platform deployment on Android/iOS browsers.</li>
+</ul>
+
+<hr/>
+
+<h2>5. File Structure</h2>
+<pre>
 number-system-converter/
 │
 ├── src/
@@ -110,39 +64,66 @@ number-system-converter/
 ├── package.json             # Project metadata & scripts
 ├── vite.config.js           # Vite configuration
 ├── README.md                # Project overview + setup instructions
-├── PROCESS.md               # Process documentation (team roles, workflow)
+├── PROCESS.md               # Process documentation (workflow, roles)
 └── PROGRAM.md               # Program documentation (architecture, algorithm)
-  </pre>
+</pre>
 
-  <h2>7. Team Roles & Workflow</h2>
-  <div class="team">
-    <p><strong>Project Lead:</strong> Loree – coordination, repository management</p>
-    <p><strong>Developer 1:</strong> UI design and integration</p>
-    <p><strong>Developer 2:</strong> Conversion logic & batch processing</p>
-    <p><strong>Tester:</strong> Manual & automated testing</p>
-    <p><strong>Documentation/DevOps:</strong> Docs and deployment setup</p>
-    <p><em>Workflow:</em> Planning → Development → Testing → Documentation → Deployment</p>
-  </div>
+<hr/>
 
-  <h2>8. Testing</h2>
-  <ul>
-    <li>Manual testing of all conversions:
-      <ul>
-        <li>Decimal ↔ Binary</li>
-        <li>Decimal ↔ Octal</li>
-        <li>Decimal ↔ Hexadecimal</li>
-        <li>Error handling with invalid inputs</li>
-      </ul>
-    </li>
-    <li>Optional: Automated tests for conversion logic using JavaScript test frameworks.</li>
-  </ul>
+<h2>6. Team Roles & Workflow</h2>
+<ul>
+  <li><b>Project Lead:</b> Loree – Coordination & repository management.</li>
+  <li><b>Developer 1:</b> UI design & integration.</li>
+  <li><b>Developer 2:</b> Conversion logic & batch processing.</li>
+  <li><b>Tester:</b> Manual & automated testing.</li>
+  <li><b>Documentation / DevOps:</b> Docs & deployment.</li>
+</ul>
+<p>
+The group worked together collaboratively through the workflow:  
+<b>Planning → Development → Testing → Documentation → Deployment</b>.
+</p>
 
-  <h2>9. How to View / Run the Project</h2>
-  <h3>Live Demo</h3>
-  <p>Visit the deployed project link on <strong>Vercel</strong> or <strong>Netlify</strong> (to be shared by Group W).</p>
+<hr/>
 
-  <h3>Run Locally</h3>
-  <pre>
+<h2>7. Testing</h2>
+<ul>
+  <li>✔ Decimal ↔ Binary</li>
+  <li>✔ Decimal ↔ Octal</li>
+  <li>✔ Decimal ↔ Hexadecimal</li>
+  <li>✔ Fractional conversions</li>
+  <li>✔ Invalid input handling</li>
+</ul>
+
+<hr/>
+
+<h2>8. Deployment Instructions</h2>
+<ol>
+  <li>Push code to GitHub:</li>
+</ol>
+
+<pre>
+git push origin main
+</pre>
+
+<ol start="2">
+  <li>Deploy via Netlify or Vercel:
+    <ul>
+      <li>Connect GitHub repository</li>
+      <li>Build command: <code>npm run build</code></li>
+      <li>Publish directory: <code>dist/</code></li>
+    </ul>
+  </li>
+</ol>
+
+<hr/>
+
+<h2>9. How to View the Project</h2>
+<ul>
+  <li><b>Live Demo:</b> Visit the deployed link on <b>Netlify</b> or <b>Vercel</b>.</li>
+  <li><b>Run Locally:</b></li>
+</ul>
+
+<pre>
 # Clone the repository
 git clone https://github.com/username/number-system-converter.git
 
@@ -154,8 +135,19 @@ npm install
 
 # Start development server
 npm run dev
-  </pre>
-  <p>Open <a href="http://localhost:5173/" target="_blank">http://localhost:5173/</a> in your browser to view the project.</p>
+</pre>
 
-</body>
-</html>
+<p>Then open <code>http://localhost:5173/</code> in your browser.</p>
+
+<hr/>
+
+<h2>10. Group Members (GROUP W)</h2>
+<ul>
+  <li><b>Blair Peter Wachira</b> – CT100/G/21430/24</li>
+  <li><b>Gitari Dennis Mutwiri</b> – CT100/G/21589/24</li>
+  <li><b>Lawrence Kibet</b> – CT100/G/21767/24</li>
+  <li><b>Philip Aticha</b> – CT100/G/22226/24</li>
+  <li><b>Cynthia Wanjiru Gitau</b> – CT100/G/20299/23</li>
+</ul>
+
+<p align="center"><i>All members contributed fairly to the success of this project.</i></p>
