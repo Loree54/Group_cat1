@@ -2,18 +2,93 @@
 
 # Number System Converter
 
-A web-based app to automate conversion between number systems (binary, octal, decimal, hexadecimal) with batch-of-five support. Built for GROUP1.
+<h1 align="center">🔢 Number System Converter</h1>
 
-## Features
-- Convert numbers between decimal, binary, octal, and hexadecimal.
-- Batch processing in groups of 5 (if extended later).
-- Simple, clean UI for fast conversion.
-- Error handling for invalid inputs.
+<h3 align="center">GROUP W</h3>
 
-## Live Demo
-- (To be updated once deployed on Vercel or Netlify)
+<p align="center">
+  A web app that automates conversion of numbers between different bases 
+  (Binary, Octal, Decimal, Hexadecimal). Supports fractional values and 
+  optional base input for flexible conversions.
+</p>
 
-## Getting Started
-1. Clone the repo:
-   ```bash
-   git clone https://github.com/LOREE54/GROUP1.git
+<hr/>
+
+<h2>🚀 Live Demo</h2>
+<p>
+  <a href="https://your-netlify-link.netlify.app">
+    <img src="https://img.shields.io/badge/View%20Project-Click%20Here-blue?style=for-the-badge" alt="View Project"/>
+  </a>
+</p>
+
+<hr/>
+
+<h2>📂 Repository</h2>
+<p>
+  <a href="https://github.com/yourusername/your-repo-name">
+    <img src="https://img.shields.io/badge/GitHub-Link-black?logo=github&style=for-the-badge" alt="GitHub Repo"/>
+  </a>
+</p>
+
+<pre>
+git clone https://github.com/yourusername/your-repo-name.git
+</pre>
+
+<hr/>
+
+<h2>📸 Project Preview</h2>
+<p>
+  <img src="./screenshot.png" alt="Project Preview"/>
+</p>
+
+<hr/>
+
+<h2>✨ Features</h2>
+<ul>
+  <li>Convert between <b>Binary, Octal, Decimal, and Hexadecimal</b></li>
+  <li>Supports <b>fractional values</b> (e.g., 101.101₂ → 5.625₁₀)</li>
+  <li>Optional <b>base input</b> for questions with subscript (e.g., 1101₂, 7A₁₆)</li>
+  <li>Clean and colorful UI with clear results</li>
+  <li>Deployed on Netlify for easy access</li>
+</ul>
+
+<hr/>
+
+<h2>🛠️ Tech Stack</h2>
+<ul>
+  <li><b>Frontend:</b> React + TailwindCSS</li>
+  <li><b>Logic:</b> JavaScript (converter.js)</li>
+  <li><b>Deployment:</b> Netlify</li>
+</ul>
+
+<hr/>
+
+<h2>👨‍👩‍👧‍👦 Group Members</h2>
+<p>This project was successfully developed by <b>GROUP W</b>, with each member contributing fairly:</p>
+<ul>
+  <li><b>Blair Peter Wachira</b> — <i>CT100/G/21430/24</i></li>
+  <li><b>Gitari Dennis Mutwiri</b> — <i>CT100/G/21589/24</i></li>
+  <li><b>Lawrence Kibet</b> — <i>CT100/G/21767/24</i></li>
+  <li><b>Philip Aticha</b> — <i>CT100/G/22226/24</i></li>
+  <li><b>Cynthia Wanjiru Gitau</b> — <i>CT100/G/20299/23</i></li>
+</ul>
+
+<hr/>
+
+<h2>⚙️ Run Locally</h2>
+<ol>
+  <li>Clone repo:
+    <pre>git clone https://github.com/yourusername/your-repo-name.git</pre>
+  </li>
+  <li>Install dependencies:
+    <pre>npm install</pre>
+  </li>
+  <li>Start development server:
+    <pre>npm run dev</pre>
+  </li>
+</ol>
+
+<hr/>
+
+<h2>📖 License</h2>
+<p>This project is for academic purposes only.</p>
