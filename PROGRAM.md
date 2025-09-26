@@ -1,66 +1,91 @@
 # Number System Converter - Program Documentation
 
-## 1. Overview
-A web-based application that automates conversions between number systems: decimal, binary, octal, and hexadecimal. Built for GROUP1 as an assignment submission.  
-Supports a clean UI and can be extended for batch-of-five processing.
+<div align="center">
 
-## 2. Project Architecture
-- **Frontend:** React + Vite
-  - `App.jsx` → Main UI component
-  - `main.jsx` → React entry point
-  - `index.css` → Styling
-- **Logic:** Node.js / JavaScript
-  - `src/logic/converter.js` → Conversion functions, error handling
-- **Deployment:** Static site hosted on **Vercel** or **Netlify**
+# 💻 Program Documentation  
+### Automation of Number System Conversion  
 
-## 3. Conversion Algorithm
-1. **Input Validation**
-   - Check input is not empty
-   - Check input characters are valid for the selected base
-2. **Parse Input**
-   - Convert input string to decimal using `parseInt(value, fromBase)`
-3. **Convert to Target Base**
-   - Convert decimal value to target base using `toString(toBase)`  
-   - Convert to uppercase for consistency
-4. **Error Handling**
-   - If input is invalid, return a clear error message
+</div>
 
-## 4. Batch-of-Five Processing (Optional / Future)
-- Accept a list of numbers
-- Split the list into groups of 5
-- Convert each value and display results per group
+---
 
-## 5. File Structure
-number-system-converter/
-│
-├── src/
-│   ├── logic/converter.js   # Conversion logic
-│   ├── App.jsx              # Main UI component
-│   ├── main.jsx             # React entry point
-│   └── index.css            # Styling
-├── index.html               # Root HTML file
-├── package.json             # Project metadata & scripts
-├── vite.config.js           # Vite configuration
-├── README.md                # Project overview + setup instructions
-├── PROCESS.md               # Process documentation (team roles, workflow)
-└── PROGRAM.md               # Program documentation (architecture, algorithm)
-## 6. Team Roles & Workflow
-- **Project Lead:** Loree – overall coordination, repository management
-- **Developer 1:** UI and integration
-- **Developer 2:** Conversion logic & batch processing
-- **Tester:** Manual/automated testing
-- **Documentation / DevOps:** Docs, deployment
-- **Workflow:** Planning → Development → Testing → Documentation → Deployment
+## 📌 Overview  
+<p>
+This program is a web-based number system converter that allows users to convert numbers  
+between <b>Binary</b>, <b>Decimal</b>, <b>Octal</b>, and <b>Hexadecimal</b> systems.  
+It also supports fractional conversions (e.g., <code>101.101₂ = 5.625₁₀</code>).  
+</p>
 
-## 7. Testing
-- Manual testing via UI:
-  - Decimal ↔ Binary
-  - Decimal ↔ Octal
-  - Decimal ↔ Hexadecimal
-  - Invalid input handling
-- Optional automated tests for conversion logic
+---
 
-## 8. Deployment Instructions
-1. Push code to GitHub:
-   ```bash
-   git push origin main
+## 📂 Program Structure  
+
+<ul>
+  <li><b>src/logic/converter.js</b> → Handles number conversion logic.</li>
+  <li><b>src/App.jsx</b> → Main user interface (input fields, dropdowns, convert button, output).</li>
+  <li><b>src/index.js</b> → Entry point of the React application.</li>
+  <li><b>public/</b> → Contains static files like favicon and index.html.</li>
+</ul>
+
+---
+
+## 🔑 Key Components  
+
+<h3>1. Conversion Logic (<code>converter.js</code>)</h3>
+<ul>
+  <li><code>parseInput(value, base)</code> → Converts input number string from any base into decimal.</li>
+  <li><code>convertToBase(num, base, precision)</code> → Converts a decimal number into the desired base.</li>
+  <li><code>batchConvert(values, fromBase, toBase)</code> → Processes multiple conversions in groups of five.</li>
+</ul>
+
+<h3>2. User Interface (<code>App.jsx</code>)</h3>
+<ul>
+  <li>Input field for the number.</li>
+  <li>Dropdown menus for selecting <b>From Base</b> and <b>To Base</b>.</li>
+  <li>Convert button for triggering conversion.</li>
+  <li>Clear output display with accurate results.</li>
+</ul>
+
+---
+
+## ⚙️ How to Run Locally  
+
+<ol>
+  <li>Clone the repository:
+    <pre><code>git clone &lt;YOUR_GITHUB_REPO_LINK&gt;  
+cd number-system-conversion-project</code></pre>
+  </li>
+  <li>Install dependencies:
+    <pre><code>npm install</code></pre>
+  </li>
+  <li>Start the development server:
+    <pre><code>npm start</code></pre>
+  </li>
+</ol>
+
+---
+
+## 🚀 Deployment  
+
+<p>The project was deployed using <b>Netlify</b>.</p>  
+
+<ol>
+  <li>Linked GitHub repository to Netlify.</li>
+  <li>Selected the correct build command (<code>npm run build</code>).</li>
+  <li>Chose the <code>build/</code> directory as the publish folder.</li>
+  <li>Successfully deployed and generated a live link.</li>
+</ol>
+
+<p>
+🔗 <b>GitHub Repository:</b> <a href="&lt;YOUR_GITHUB_REPO_LINK&gt;">View on GitHub</a><br>
+🌍 <b>Live Project:</b> <a href="&lt;YOUR_PROJECT_LINK&gt;">View Here</a>
+</p>
+
+---
+
+## ✅ Conclusion  
+<p>
+The program is modular, well-structured, and user-friendly.  
+It not only performs accurate number system conversions but also provides a  
+simple and clear user interface for learners and professionals.  
+</p>
