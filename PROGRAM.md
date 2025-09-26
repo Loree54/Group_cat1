@@ -72,20 +72,15 @@ number-system-converter/
 
 <hr/>
 
-<h2>6. Group Members & Teamwork</h2>
-<div>
-  <ul>
-    <li><b>Blair Peter Wachira</b> – CT100/G/21430/24</li>
-    <li><b>Gitari Dennis Mutwiri</b> – CT100/G/21589/24</li>
-    <li><b>Lawrence Kibet</b> – CT100/G/21767/24</li>
-    <li><b>Philip Aticha</b> – CT100/G/22226/24</li>
-    <li><b>Cynthia Wanjiru Gitau</b> – CT100/G/20299/23</li>
-  </ul>
-  <p>
-  All members contributed equally in planning, coding, UI design, testing, and documentation.  
-  Tasks were shared fairly to ensure teamwork and full participation.
-  </p>
-</div>
+<h2>6. Team Roles & Contributions</h2>
+<ul>
+  <li><b>Blair Peter Wachira</b> – Planning, UI design, and integration of interface elements.</li>
+  <li><b>Gitari Dennis Mutwiri</b> – Conversion logic, batch processing, and automated testing.</li>
+  <li><b>Lawrence Kibet</b> – Frontend development, linking logic with UI, debugging.</li>
+  <li><b>Philip Aticha</b> – Manual testing, documenting features, deployment assistance.</li>
+  <li><b>Cynthia Wanjiru Gitau</b> – Documentation, reviewing workflow, assisting deployment.</li>
+</ul>
+<p><b>Note:</b> All members participated fairly in every stage of the project to ensure collaboration and success.</p>
 
 <hr/>
 
