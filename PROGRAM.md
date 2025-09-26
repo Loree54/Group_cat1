@@ -1,91 +1,123 @@
-# Number System Converter - Program Documentation
+# Number System Converter - Program Documentaton 
+<h1 align="center">Program Documentation</h1>
 
-<div align="center">
-
-# 💻 Program Documentation  
-### Automation of Number System Conversion  
-
-</div>
-
----
-
-## 📌 Overview  
+<h2>1. Overview</h2>
 <p>
-This program is a web-based number system converter that allows users to convert numbers  
-between <b>Binary</b>, <b>Decimal</b>, <b>Octal</b>, and <b>Hexadecimal</b> systems.  
-It also supports fractional conversions (e.g., <code>101.101₂ = 5.625₁₀</code>).  
+A web-based application that automates conversions between number systems: 
+<b>Decimal, Binary, Octal, and Hexadecimal</b>.  
+Developed and submitted by <b>GROUP W</b> as part of an academic assignment.  
+The system features a clean UI, accurate conversion algorithms, and optional batch-of-five processing.
 </p>
 
----
-
-## 📂 Program Structure  
-
+<h2>2. Project Architecture</h2>
 <ul>
-  <li><b>src/logic/converter.js</b> → Handles number conversion logic.</li>
-  <li><b>src/App.jsx</b> → Main user interface (input fields, dropdowns, convert button, output).</li>
-  <li><b>src/index.js</b> → Entry point of the React application.</li>
-  <li><b>public/</b> → Contains static files like favicon and index.html.</li>
+  <li><b>Frontend:</b> React + Vite
+    <ul>
+      <li><code>App.jsx</code> → Main UI component</li>
+      <li><code>main.jsx</code> → React entry point</li>
+      <li><code>index.css</code> → Styling</li>
+    </ul>
+  </li>
+  <li><b>Logic:</b> Node.js / JavaScript
+    <ul>
+      <li><code>src/logic/converter.js</code> → Conversion functions and error handling</li>
+    </ul>
+  </li>
+  <li><b>Deployment:</b> Static site hosted on <b>Vercel</b> or <b>Netlify</b></li>
 </ul>
 
----
-
-## 🔑 Key Components  
-
-<h3>1. Conversion Logic (<code>converter.js</code>)</h3>
-<ul>
-  <li><code>parseInput(value, base)</code> → Converts input number string from any base into decimal.</li>
-  <li><code>convertToBase(num, base, precision)</code> → Converts a decimal number into the desired base.</li>
-  <li><code>batchConvert(values, fromBase, toBase)</code> → Processes multiple conversions in groups of five.</li>
-</ul>
-
-<h3>2. User Interface (<code>App.jsx</code>)</h3>
-<ul>
-  <li>Input field for the number.</li>
-  <li>Dropdown menus for selecting <b>From Base</b> and <b>To Base</b>.</li>
-  <li>Convert button for triggering conversion.</li>
-  <li>Clear output display with accurate results.</li>
-</ul>
-
----
-
-## ⚙️ How to Run Locally  
-
+<h2>3. Conversion Algorithm</h2>
 <ol>
-  <li>Clone the repository:
-    <pre><code>git clone &lt;YOUR_GITHUB_REPO_LINK&gt;  
-cd number-system-conversion-project</code></pre>
+  <li><b>Input Validation</b>
+    <ul>
+      <li>Check that input is not empty</li>
+      <li>Ensure input characters are valid for the selected base</li>
+    </ul>
   </li>
-  <li>Install dependencies:
-    <pre><code>npm install</code></pre>
+  <li><b>Parse Input</b>
+    <ul>
+      <li>Convert the input string (integer and fractional parts) to decimal</li>
+    </ul>
   </li>
-  <li>Start the development server:
-    <pre><code>npm start</code></pre>
+  <li><b>Convert to Target Base</b>
+    <ul>
+      <li>Integer part → <code>num.toString(base)</code></li>
+      <li>Fractional part → multiply by base repeatedly and extract digits</li>
+      <li>Combine results into final converted number</li>
+    </ul>
+  </li>
+  <li><b>Error Handling</b>
+    <ul>
+      <li>Invalid inputs return clear error messages</li>
+    </ul>
   </li>
 </ol>
 
----
+<h2>4. Batch-of-Five Processing (Optional / Future)</h2>
+<ul>
+  <li>Accept a list of numbers</li>
+  <li>Split the list into groups of 5</li>
+  <li>Convert each value and display results per group</li>
+</ul>
 
-## 🚀 Deployment  
+<h2>5. File Structure</h2>
+<pre>
+number-system-converter/
+│
+├── src/
+│   ├── logic/converter.js   # Conversion logic
+│   ├── App.jsx              # Main UI component
+│   ├── main.jsx             # React entry point
+│   └── index.css            # Styling
+├── index.html               # Root HTML file
+├── package.json             # Project metadata & scripts
+├── vite.config.js           # Vite configuration
+├── README.md                # Project overview + setup instructions
+├── PROCESS.md               # Process documentation (team roles, workflow)
+└── PROGRAM.md               # Program documentation (architecture, algorithm)
+</pre>
 
-<p>The project was deployed using <b>Netlify</b>.</p>  
-
-<ol>
-  <li>Linked GitHub repository to Netlify.</li>
-  <li>Selected the correct build command (<code>npm run build</code>).</li>
-  <li>Chose the <code>build/</code> directory as the publish folder.</li>
-  <li>Successfully deployed and generated a live link.</li>
-</ol>
-
+<h2>6. Team Roles & Workflow</h2>
+<ul>
+  <li><b>Blair Peter Wachira</b> — Project Lead, repository management</li>
+  <li><b>Gitari Dennis Mutwiri</b> — UI design and integration</li>
+  <li><b>Lawrence Kibet</b> — Conversion logic and batch processing</li>
+  <li><b>Philip Aticha</b> — Testing and validation</li>
+  <li><b>Cynthia Wanjiru Gitau</b> — Documentation and deployment</li>
+</ul>
 <p>
-🔗 <b>GitHub Repository:</b> <a href="&lt;YOUR_GITHUB_REPO_LINK&gt;">View on GitHub</a><br>
-🌍 <b>Live Project:</b> <a href="&lt;YOUR_PROJECT_LINK&gt;">View Here</a>
+All group members participated actively through coding, testing, reviewing, and documentation.  
+Tasks were shared fairly to ensure teamwork and equal contribution.
 </p>
 
----
+<h2>7. Testing</h2>
+<ul>
+  <li>Manual testing via UI:
+    <ul>
+      <li>Decimal ↔ Binary</li>
+      <li>Decimal ↔ Octal</li>
+      <li>Decimal ↔ Hexadecimal</li>
+      <li>Invalid input handling</li>
+    </ul>
+  </li>
+  <li>Optional automated tests for <code>converter.js</code></li>
+</ul>
 
-## ✅ Conclusion  
+<h2>8. Deployment Instructions</h2>
+<ol>
+  <li>Push code to GitHub:
+    <pre><code>git add .  
+git commit -m "final update"  
+git push origin main</code></pre>
+  </li>
+  <li>Connect GitHub repository to Netlify or Vercel</li>
+  <li>Deploy and test live project</li>
+</ol>
+
+<h2>9. Conclusion</h2>
 <p>
-The program is modular, well-structured, and user-friendly.  
-It not only performs accurate number system conversions but also provides a  
-simple and clear user interface for learners and professionals.  
+The program successfully automates number system conversions across different bases, 
+handles fractional values, and supports batch processing.  
+It also demonstrates effective teamwork, collaboration, and application of digital logic concepts.  
+<b>Every member of GROUP W contributed fairly, ensuring the success of this project.</b>
 </p>
