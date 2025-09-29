@@ -117,11 +117,11 @@ number-system-converter/
 
 <h3>Run Locally</h3>
 <ul>
-  <li><code>git clone https://github.com/username/number-system-converter.git</code></li>
+  <li><code>git clone https://github.com/Loree54/Group_w</code></li>
   <li><code>cd number-system-converter</code></li>
   <li><code>npm install</code></li>
   <li><code>npm run dev</code></li>
-  <li>Open <code>http://localhost:5173/</code> in your browser</li>
+  <li>Open <code>groupw.netlify.app</code> in your browser</li>
 </ul>
 
 <hr/>
