@@ -1,54 +1,103 @@
-/* Reset default browser styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
-}
-
-/* App container */
+/* Global */
 body {
-  background: #f4f6f9;
-  color: #333;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #0d1117;
+  color: #e6edf3;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
 }
 
-/* Card style */
-.container {
-  background: #fff;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  width: 400px;
-  max-width: 90%;
+/* Container */
+.app-container {
   text-align: center;
+  padding: 20px;
 }
 
-/* Inputs and selects */
-input, select {
-  padding: 0.5rem;
-  margin: 0.5rem 0;
+.title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #58a6ff;
+  margin-bottom: 20px;
+}
+
+/* Card */
+.card {
+  background: #161b22;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  max-width: 400px;
+  margin: auto;
+}
+
+/* Inputs */
+.input-box,
+.base-input,
+.dropdown {
   width: 100%;
-  border: 1px solid #ccc;
-  border-radius: 6px;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 8px;
+  border: 1px solid #30363d;
+  outline: none;
+  font-size: 1rem;
+  background: #0d1117;
+  color: #e6edf3;
+  transition: border 0.3s ease;
+}
+
+.input-box:focus,
+.base-input:focus,
+.dropdown:focus {
+  border-color: #58a6ff;
+}
+
+/* Selectors */
+.selectors {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
 }
 
 /* Button */
-button {
-  padding: 0.7rem;
-  margin-top: 1rem;
+.convert-btn {
   width: 100%;
-  border: none;
-  background: #4a90e2;
+  padding: 12px;
+  margin-top: 15px;
+  background: linear-gradient(90deg, #58a6ff, #238636);
   color: white;
   font-weight: bold;
-  border-radius: 6px;
+  border: none;
+  border-radius: 10px;
   cursor: pointer;
+  transition: opacity 0.3s ease, transform 0.2s ease;
 }
 
-button:hover {
-  background: #357abd;
+.convert-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
 }
+
+/* Output */
+.output-box {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 10px;
+  background: #21262d;
+  border: 1px solid #30363d;
+}
+
+.output-box h3 {
+  margin: 0;
+  color: #3fb950;
+}
+
+.output-box p {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 5px 0 0;
+  color: #f0f6fc;
+  }
