@@ -54,4 +54,10 @@ export function batchConvert(values, fromBase, toBase, precision = 10) {
     results.push(...group); // flatten all results
   }
   return results;
-                                            }
+                     
+}
+
+export default function convertNumber(value, fromBase = 10, toBase = 10) {
+  const num = parseInput(value, fromBase);
+  return convertToBase(num, toBase);
+}
