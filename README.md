@@ -98,3 +98,11 @@ project link https://groupw.netlify.app
 
 <h2>📖 License</h2>
 <p>This project is for academic purposes only.</p>
+
+<ul>
+  <li><a href="https://github.com/REPLACE_BLairUSERNAME" target="_blank" rel="noopener">Blair Peter Wachira</a> - Group Leader</li>
+  <li><a href="https://github.com/REPLACE_GitariUSERNAME" target="_blank" rel="noopener">Gitari Dennis Mutwiri</a> - Member</li>
+  <li><a href="https://github.com/REPLACE_LawrenceUSERNAME" target="_blank" rel="noopener">Lawrence Kibet</a> - Member</li>
+  <li><a href="https://github.com/REPLACE_PhilipUSERNAME" target="_blank" rel="noopener">Philip Aticha</a> - Member</li>
+  <li><a href="https://github.com/REPLACE_CynthiaUSERNAME" target="_blank" rel="noopener">Cynthia Wanjiru Gitau</a> - Lecturer</li>
+</ul>
