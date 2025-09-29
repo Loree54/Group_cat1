@@ -118,7 +118,7 @@ number-system-converter/
 <h3>Run Locally</h3>
 <ul>
   <li><code>git clone https://github.com/Loree54/Group_w</code></li>
-  <li><code>cd number-system-converter</code></li>
+  <li><code>cd group_w</code></li>
   <li><code>npm install</code></li>
   <li><code>npm run dev</code></li>
   <li>Open <code>groupw.netlify.app</code> in your browser</li>
