@@ -32,20 +32,20 @@ function App() {
           placeholder="e.g. 101.101"
         />
 
-        {/* From Base Dropdown (updated) */}
+        {/* From Base (dropdown but styled same as input) */}
         <label className="label">From Base:</label>
         <select
-          className="dropdown"
+          className="input-box"
           value={fromBase}
           onChange={(e) => setFromBase(Number(e.target.value))}
         >
-          <option value="2">Binary (Base 2)</option>
-          <option value="8">Octal (Base 8)</option>
-          <option value="10">Decimal (Base 10)</option>
-          <option value="16">Hexadecimal (Base 16)</option>
+          <option value="2">2</option>
+          <option value="8">8</option>
+          <option value="10">10</option>
+          <option value="16">16</option>
         </select>
 
-        {/* To Base Input (unchanged) */}
+        {/* To Base */}
         <label className="label">To Base:</label>
         <input
           className="input-box"
