@@ -34,6 +34,12 @@
 git clone https://github.com/Loree54/Group_w
 </pre>
 
+</p>
+
+<pre>
+project link https://groupw.netlify.app
+</pre>
+
 <hr/>
 
 <h2>📸 Project Preview</h2>
