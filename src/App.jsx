@@ -5,12 +5,12 @@ import "./index.css";
 function App() {
   const [inputValue, setInputValue] = useState("");
   const [fromBase, setFromBase] = useState(10);
-  const [toBase, setToBase] = useState(2);
+  const [toBase, setToBase] = useState("");
   const [result, setResult] = useState("");
 
   const handleConvert = () => {
     try {
-      const converted = convertNumber(inputValue, fromBase, toBase);
+      const converted = convertNumber(inputValue, fromBase, toBase || 10);
       setResult(converted);
     } catch (e) {
       setResult("Invalid input or base!");
@@ -20,7 +20,7 @@ function App() {
   return (
     <div className="app-container">
       <h1 className="title">Number System Converter</h1>
-      
+
       <div className="card">
         {/* Input Number */}
         <label className="label">Enter Number:</label>
@@ -32,7 +32,7 @@ function App() {
           placeholder="e.g. 101.101"
         />
 
-        {/* From Base Dropdown */}
+        {/* From Base Dropdown (updated) */}
         <label className="label">From Base:</label>
         <select
           className="dropdown"
@@ -45,18 +45,15 @@ function App() {
           <option value="16">Hexadecimal (Base 16)</option>
         </select>
 
-        {/* To Base Dropdown */}
+        {/* To Base Input (unchanged) */}
         <label className="label">To Base:</label>
-        <select
-          className="dropdown"
+        <input
+          className="input-box"
+          type="number"
           value={toBase}
           onChange={(e) => setToBase(Number(e.target.value))}
-        >
-          <option value="2">Binary (Base 2)</option>
-          <option value="8">Octal (Base 8)</option>
-          <option value="10">Decimal (Base 10)</option>
-          <option value="16">Hexadecimal (Base 16)</option>
-        </select>
+          placeholder="Leave blank for Decimal (10)"
+        />
 
         {/* Convert Button */}
         <button className="btn-primary" onClick={handleConvert}>
