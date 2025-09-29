@@ -16,7 +16,7 @@
 
 <h2>🚀 Live Demo</h2>
 <p>
-  <a href="https://your-netlify-link.netlify.app">
+  <a href="https://groupw.netlify.app">
     <img src="https://img.shields.io/badge/View%20Project-Click%20Here-blue?style=for-the-badge" alt="View Project"/>
   </a>
 </p>
@@ -25,13 +25,13 @@
 
 <h2>📂 Repository</h2>
 <p>
-  <a href="https://github.com/yourusername/your-repo-name">
+  <a href="https://github.com/Loree54/Group_w">
     <img src="https://img.shields.io/badge/GitHub-Link-black?logo=github&style=for-the-badge" alt="GitHub Repo"/>
   </a>
 </p>
 
 <pre>
-git clone https://github.com/yourusername/your-repo-name.git
+git clone https://github.com/Loree54/Group_w
 </pre>
 
 <hr/>
@@ -78,7 +78,7 @@ git clone https://github.com/yourusername/your-repo-name.git
 <h2>⚙️ Run Locally</h2>
 <ol>
   <li>Clone repo:
-    <pre>git clone https://github.com/yourusername/your-repo-name.git</pre>
+    <pre>git clone https://github.com/Loree54/Group_w</pre>
   </li>
   <li>Install dependencies:
     <pre>npm install</pre>
