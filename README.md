@@ -101,9 +101,9 @@ project link https://groupw.netlify.app
 
 <h2>📖 Special thanks</h2>
 <ul>
-  <li><a href="https://github.com/REPLACE_BLairUSERNAME" target="_blank" rel="noopener">Blair Peter Wachira</a> - Group Leader</li>
-  <li><a href="https://github.com/REPLACE_GitariUSERNAME" target="_blank" rel="noopener">Gitari Dennis Mutwiri</a> - Member</li>
-  <li><a href="https://github.com/REPLACE_LawrenceUSERNAME" target="_blank" rel="noopener">Lawrence Kibet</a> - Member</li>
-  <li><a href="https://github.com/REPLACE_PhilipUSERNAME" target="_blank" rel="noopener">Philip Aticha</a> - Member</li>
-  <li><a href="https://github.com/REPLACE_CynthiaUSERNAME" target="_blank" rel="noopener">Cynthia Wanjiru Gitau</a> - Lecturer</li>
+  <li><a href="https://github.com/blair_wachira" target="_blank" rel="noopener">Blair Peter Wachira</a> - Group Leader</li>
+  <li><a href="https://github.com/D30mu" target="_blank" rel="noopener">Gitari Dennis Mutwiri</a> - Member</li>
+  <li><a href="https://github.com/Loree54" target="_blank" rel="noopener">Lawrence Kibet</a> - Member</li>
+  <li><a href="https://github.com/PhilipAticha" target="_blank" rel="noopener">Philip Aticha</a> - Member</li>
+  <li><a href="https://github.com/REPLACE_CynthiaUSERNAME" target="_blank" rel="noopener">Cynthia Wanjiru Gitau</a> - member</li>
 </ul>
