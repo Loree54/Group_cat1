@@ -1,67 +1,77 @@
 import React, { useState } from "react";
 import convertNumber from "./logic/converter";
+import "./index.css";
 
-export default function App() {
-  const [input, setInput] = useState("");
-  const [fromBase, setFromBase] = useState("");
-  const [toBase, setToBase] = useState("10");
+function App() {
+  const [inputValue, setInputValue] = useState("");
+  const [fromBase, setFromBase] = useState(10);
+  const [toBase, setToBase] = useState(2);
   const [result, setResult] = useState("");
 
   const handleConvert = () => {
     try {
-      const base = fromBase === "" ? undefined : parseInt(fromBase, 10);
-      const output = convertNumber(input, base, parseInt(toBase, 10));
-      setResult(output);
-    } catch (error) {
-      setResult("⚠️ Invalid input");
+      const converted = convertNumber(inputValue, fromBase, toBase);
+      setResult(converted);
+    } catch (e) {
+      setResult("Invalid input or base!");
     }
   };
 
   return (
     <div className="app-container">
-      <h1 className="title">🔢 Number System Converter</h1>
-
+      <h1 className="title">Number System Converter</h1>
+      
       <div className="card">
+        {/* Input Number */}
+        <label className="label">Enter Number:</label>
         <input
-          type="text"
-          placeholder="Enter number e.g. 101.101"
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
           className="input-box"
+          type="text"
+          value={inputValue}
+          onChange={(e) => setInputValue(e.target.value)}
+          placeholder="e.g. 101.101"
         />
 
-        <div className="selectors">
-          <input
-            type="number"
-            placeholder="From Base (leave blank if default)"
-            value={fromBase}
-            onChange={(e) => setFromBase(e.target.value)}
-            className="base-input"
-          />
+        {/* From Base Dropdown */}
+        <label className="label">From Base:</label>
+        <select
+          className="dropdown"
+          value={fromBase}
+          onChange={(e) => setFromBase(Number(e.target.value))}
+        >
+          <option value="2">Binary (Base 2)</option>
+          <option value="8">Octal (Base 8)</option>
+          <option value="10">Decimal (Base 10)</option>
+          <option value="16">Hexadecimal (Base 16)</option>
+        </select>
 
-          <select
-            value={toBase}
-            onChange={(e) => setToBase(e.target.value)}
-            className="dropdown"
-          >
-            <option value="2">Binary (Base 2)</option>
-            <option value="8">Octal (Base 8)</option>
-            <option value="10">Decimal (Base 10)</option>
-            <option value="16">Hexadecimal (Base 16)</option>
-          </select>
-        </div>
+        {/* To Base Dropdown */}
+        <label className="label">To Base:</label>
+        <select
+          className="dropdown"
+          value={toBase}
+          onChange={(e) => setToBase(Number(e.target.value))}
+        >
+          <option value="2">Binary (Base 2)</option>
+          <option value="8">Octal (Base 8)</option>
+          <option value="10">Decimal (Base 10)</option>
+          <option value="16">Hexadecimal (Base 16)</option>
+        </select>
 
-        <button className="convert-btn" onClick={handleConvert}>
+        {/* Convert Button */}
+        <button className="btn-primary" onClick={handleConvert}>
           Convert
         </button>
 
+        {/* Output */}
         {result && (
           <div className="output-box">
-            <h3>Result:</h3>
-            <p>{result}</p>
+            <strong>Result:</strong> {result}
           </div>
         )}
       </div>
     </div>
   );
-            }
+}
+
+export default App;
