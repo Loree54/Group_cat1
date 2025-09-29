@@ -99,6 +99,7 @@ project link https://groupw.netlify.app
 <h2>📖 License</h2>
 <p>This project is for academic purposes only.</p>
 
+<h2>📖 Special thanks</h2>
 <ul>
   <li><a href="https://github.com/REPLACE_BLairUSERNAME" target="_blank" rel="noopener">Blair Peter Wachira</a> - Group Leader</li>
   <li><a href="https://github.com/REPLACE_GitariUSERNAME" target="_blank" rel="noopener">Gitari Dennis Mutwiri</a> - Member</li>
